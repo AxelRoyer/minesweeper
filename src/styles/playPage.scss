@@ -1,0 +1,271 @@
+#game{
+    position:relative;
+
+
+    >header{
+        >div{
+            height: 100%;
+
+            >#remainingBombs, #remainingTime{
+                display: inline-block;
+                position: relative;
+                top:-0.6rem;
+            }
+
+            >#remainingBombs{
+                margin-right: 1rem;
+            }
+
+            >#remainingTime{
+                margin-left: 1rem;
+            }
+
+            >.icon-bomb, >.icon-time{
+                height: 100%;
+                width: 2rem;
+                display: inline-block;
+            }
+
+            >.icon-bomb{
+                background:url("images/bomb_small.png") no-repeat;
+            }
+
+            >.icon-time{
+                position: relative;
+                top:4px;
+                background:url("images/clock.png") no-repeat;
+            }
+        }
+
+        >.pauseTimer, >.playTimer{
+            content: "";
+            display: inline-block;
+            height: 2rem;
+            float: right;
+            margin-right: 1rem;
+            width: 2rem;
+
+            &:hover, &:active{
+                background-color: darkorange;
+            };
+        }
+
+        >.pauseTimer{
+            background:url("images/pause.png");
+        };
+
+        >.playTimer{
+            background:url("images/play.png");
+        };
+
+        >#newGame{
+            float: right;
+            margin-right: 1rem;
+            display: inline-block;
+            height: 2rem;
+            width: 2rem;
+            background:url("images/new.png");
+
+            &:hover, &:active{
+                background-color:darkorange;
+            };
+        }
+
+    }
+
+    #boardContainer{
+        height: calc(100% - 4rem);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        #board{
+            display: table-cell;
+
+            .line{
+                display: table-row;
+            }
+
+            &.game-cursor-hand .unclicked{
+                cursor: pointer;
+            }
+
+            &.game-cursor-flag .unclicked{
+                cursor: url('images/cursor_flag.png'), auto;
+            }
+
+            .flaged, .empty, .unclicked, .box, .bomb, .value1, .value2, .value3,
+            .value4, .value5, .value6, .value7, .value8{
+                height: 48px;
+                width: 48px;
+                display: inline-block;
+                border-radius: 4px;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 3rem;
+                margin: 2px;
+                font-size: 2rem;
+            }
+
+            .unclicked:hover, .unclicked:active{
+                background-color:darkgray;
+            };
+
+            .empty{
+                background-color: whitesmoke;
+            }
+
+            .value1, .value2, .value3, .value4,
+            .value5, .value6, .value7, .value8{
+                background-color: silver;
+            }
+
+            .flaged{
+                background: url("images/flag.png") center center;
+                background-color: lightgray;
+            }
+
+            .unclicked{
+                background-color: gray;
+            }
+
+            .bomb{
+                background: url("images/bomb.png") no-repeat center center;
+                background-color: red;
+            };
+
+            .value1{
+                color: green;
+            };
+
+            .value2{
+                color: red;
+            };
+
+            .value3{
+                color: blue;
+            };
+
+            .value4{
+                color: orange;
+            };
+
+            .value5{
+                color: pink;
+            };
+
+            .value6{
+                color: black;
+            };
+
+            .value7{
+                color: brown;
+            };
+
+            .value8{
+                color: gray;
+            };
+        }
+    }
+
+    footer{
+        background-color: #2C3539;
+        width: 100%;
+        height: 2rem;
+        position: absolute;
+        bottom: 0;
+        line-height: 2rem;
+        color: white;
+        table-layout: fixed;
+        display: table;
+
+        a{
+            display: table-cell;
+            text-align: center;
+            width: calc(100% / 3);
+
+            &:hover{
+                background-color:gray;
+            };
+        }
+
+        .help-icon-disable,
+        .help-icon-enable{
+            display: inline-block;
+            content: "";
+            height: 25px;
+            width: 25px;
+            position: relative;
+            top:5px;
+        }
+
+        .help-icon-enable {
+            background: url("images/help-colored.png") no-repeat 0 0;
+        }
+
+        .help-icon-disable {
+            background: url("images/help-gray.png") no-repeat 0 0;
+        }
+
+        .help-disabled span{
+            background: url("images/help-gray.png") no-repeat 0 0;
+        }
+
+        .hand-flag, .flag-hand{
+            background-size: 60px 30px;
+        }
+
+        .hand-flag{
+            background: url("images/hand_flag.png") no-repeat center center;
+            cursor: pointer;
+        }
+
+        .flag-hand{
+            background: url("images/flag_hand.png") no-repeat center center;
+            cursor: url('icon/cursor_flag.png');
+        }
+    }
+
+    #shadow, .shadow{
+        background: rgba(0,0,0,0.5);
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        position:fixed;
+        z-index:99;
+    }
+
+    #inputName {
+        align-items: center;
+        justify-content: center;
+        display: none;
+
+        div{
+            width: 15rem;
+            text-align: center;
+            background-color: white;
+
+            h5{
+                border-bottom: 1px solid $mainColor;
+            }
+
+            button{
+                width:100%;
+                display: block;
+                background-color: $mainColor;
+                border:1px solid $mainColor;
+
+                &:hover{
+                    background-color:$mainDarkColor;
+                    border:1px solid $mainDarkColor;
+                };
+            }
+
+            label{
+                padding: 0.2rem;
+            }
+        }
+    }
+}

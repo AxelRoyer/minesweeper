@@ -1,0 +1,35 @@
+#rules{
+	display:none;
+
+	&:target{
+		display:block;
+	}
+
+	ul{
+		width:100%;
+		padding-top: 1rem;
+		max-width: 30rem;
+		margin: auto;
+
+		li{
+			list-style: none;
+			text-align: center;
+			border: 1px solid $secondColor;
+
+			h5{
+				font-weight: normal;
+				background-color: $secondColor;
+				color: white;
+			}
+
+			p{
+				padding: 0.3rem;
+				background-color: whitesmoke;
+			}
+
+			& + li {
+				margin-top: 1rem;
+			}
+		}
+	}
+}

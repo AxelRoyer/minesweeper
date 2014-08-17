@@ -1,0 +1,68 @@
+#parameters{
+    ul{
+        li{
+            list-style: none;
+            padding: 0.3rem 0.8rem 0.5rem 0.8rem;
+            position: relative;
+
+            &:hover span{
+                color:#383838 ;
+            };
+
+            .title{
+                font-size: 1.3rem;
+                color: gray;
+                display: block;
+                width: calc(100% - 2rem);
+            }
+            .subTitle{
+                font-size: 0.8rem;
+                color:gray;
+                display: block;
+                width: calc(100% - 2rem);
+                margin-top: -0.4rem;
+            }
+
+            > select{
+                position: absolute;
+                right: 1rem;
+                top: 1.2rem;
+            }
+
+            .checkbox-checked{
+                position: absolute;
+                height: 1.4rem;
+                width: 1.4rem;
+                right: 1rem;
+                top: 1.1rem;
+                content: "";
+                background:url("images/checkbox-checked.png");
+            }
+
+            & + li{
+                border-top: 1px solid silver;
+            }
+
+            &:last-child{
+                height: 5.5rem;
+                border-bottom: 1px solid silver;
+            }
+
+            input[type="checkbox"]{
+                position: absolute;
+                right: 1rem;
+                top:1.2rem;
+            }
+
+            .select-label{
+                position: absolute;
+                top:1rem;
+                right: 1rem;
+            }
+
+            .select-label + .select-label{
+                top:3rem;
+            }
+        }
+    }
+}

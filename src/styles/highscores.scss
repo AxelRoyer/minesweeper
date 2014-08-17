@@ -1,0 +1,37 @@
+#highscores{
+    table{
+        width: 100%;
+
+        thead{
+            height: 1rem;
+            background-color: gray;
+            width: 100%;
+            color: white;
+            text-align:center;
+
+            th{
+                text-align:center;
+            }
+        }
+
+        tbody tr{
+            height: 2rem;
+
+            &:nth-child(odd){
+                background-color:white;
+            }
+
+            &:nth-child(even){
+                background-color: whitesmoke;
+            };
+
+            & + tr{
+                border-top: 1px solid whitesmoke;
+            }
+
+            td{
+                text-align:center;
+            }
+        }
+    }
+}

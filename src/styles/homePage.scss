@@ -1,0 +1,30 @@
+#home{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#home > nav {
+    margin-top: 10%;
+}
+
+#home > nav > a{
+    background-color: rgba(255, 140, 0, 0.7);
+    color:white;
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration:none;
+    transition: 0.5s;
+    display:block;
+    margin-top:0.5rem;
+
+    &:hover{
+        color:black;
+        background-color: rgba(255, 140, 0, 1);
+    }
+}
+
+#backCurrentGameButton{
+    display: none;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Minesweeper</title>
+        <link rel="stylesheet" href="src/styles/style.css">
+        <script src="libs/l10n/l10n.js"></script>
+        <link rel="prefetch" type="application/l10n" href="libs/l10n/locales.ini"/>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section id="wrapper">
+            <section id="home">
+                <nav>
+                    <a data-l10n-id="backCurrentGame" href="#game" id="backCurrentGameButton"></a>
+                    <a data-l10n-id="newGame" href="#game" id="newGameButton"></a>
+                    <a data-l10n-id="rules" href="#rules" id="rulesButton"></a>
+                    <a data-l10n-id="highscores" href="#highscores" id="highscoresButton"></a>
+                    <a data-l10n-id="parameters" href="#parameters" id="parametersButton"></a>
+                </nav>
+            </section><!--
+         --><section id="game">
+                <header>
+                    <a data-l10n-id="back" class="back" href="#home" id="gameBackButton"></a>
+                    <a data-l10n-id="playPause" id="playPauseTimer" class="pauseTimer"></a>
+                    <a data-l10n-id="restartGame" id="newGame"></a>
+                    <div>
+                        <span class="icon-bomb"></span>
+                        <span id="remainingBombs" data-l10n-id="remainingBombs"></span>
+                        <span id="remainingTime" data-l10n-id="remainingTime"></span>
+                        <span class="icon-time"></span>
+                    </div>
+                </header>
+                <section id="boardContainer">
+                    <div id="board"></div>
+                </section>
+                <footer>
+                    <a data-l10n-id="solutionButton" id="endGame"></a>
+                    <a data-l10n-id="helpButton" id="helpButton">
+                        <span id="icon1" class="help-icon-enable"></span>
+                        <span id="icon2" class="help-icon-enable"></span>
+                        <span id="icon3" class="help-icon-enable"></span>
+                    </a>
+                    <a data-l10n-id="pointerButton" id="switchPointer" class="hand-flag"></a>
+                </footer>
+            </section><!--
+         --><section id="highscores">
+                <header>
+                    <a data-l10n-id="back" href="#home" id="highscoresBackButton" class="back"></a>
+                    <div data-l10n-id="highscores" class="title"></div>
+                </header>
+                <div class="pageBody">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-l10n-id="name"></th>
+                                <th data-l10n-id="level"></th>
+                                <th data-l10n-id="time"></th>
+                            </tr>
+                        </thead>
+                        <tbody  id="highscoresContainer">
+                        </tbody>
+                    </table>
+                </div>
+            </section><!--
+         --><section id="parameters">
+                <header>
+                    <a data-l10n-id="back" href="#home" class="back" id="parametersBackButton"></a>
+                    <div data-l10n-id="parameters" class="title"></div>
+                </header>
+                <form id="parametersForm" class="pageBody">
+                    <ul>
+                        <li id="clearDataToDefault">
+                            <span data-l10n-id="clearDataTitle" class="title"></span>
+                            <span data-l10n-id="clearDataSubTitle" class="subTitle"></span>
+                        </li>
+                        <li>
+                            <span data-l10n-id="levelTitle" class="title"></span>
+                            <span data-l10n-id="levelSubTitle" class="subTitle"></span>
+                            <select name="level">
+                                <option data-l10n-id="levelWarrior" value="4.8">Warior</option>
+                                <option data-l10n-id="levelAdvanced" value="3">No problem I'm good</option>
+                                <option data-l10n-id="levelBeginner" value="2.1">beginner</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span data-l10n-id="languageTitle" class="title">Language</span>
+                            <span data-l10n-id="languageSubTitle" class="subTitle">Application language</span>
+                            <select name="language">
+                                <option data-l10n-id="languageFrench" value="fr-FR">French</option>
+                                <option data-l10n-id="languageEnglish" value="en-US">English</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>
+                                <span data-l10n-id="helpTitle" class="title">Help</span>
+                                <span data-l10n-id="helpSubTitle" class="subTitle">Could help you during the game</span>
+                                <input type="checkbox" name="help" checked="true">
+                            </label>
+                        </li>
+                        <li>
+                            <span data-l10n-id="boardSizeTitle" class="title">Board</span>
+                            <span data-l10n-id="boardSizeSubTitle" class="subTitle">Board size</span>
+                            <label data-l10n-id="boardSizeHeight" class="select-label">Height
+                                <select name="height" value="5">
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                </select>
+                            </label>
+                            <label data-l10n-id="boardSizeWidth" class="select-label">Width
+                                <select name="width" value="5">
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+            </section><!--
+         --><section id="rules">
+                <header>
+                    <a data-l10n-id="back" href="#home" id="rulesBackButton" class="back"></a>
+                    <div data-l10n-id="rules" class="title"></div>
+                </header>
+                <ul>
+                    <li>
+                        <h5 data-l10n-id="law1_title"></h5>
+                        <p data-l10n-id="law1_text"></p>
+                    </li>
+                    <li>
+                        <h5 data-l10n-id="law2_title"></h5>
+                        <p data-l10n-id="law2_text"></p>
+                    </li>
+                    <li>
+                        <h5 data-l10n-id="law3_title"></h5>
+                        <p data-l10n-id="law3_text"></p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <script src="src/timer.js" type="text/javascript"></script>
+        <script src="src/utils.js" type="text/javascript"></script>
+        <script src="libs/dialogBox.js"></script>
+
+        <script src="src/models/box.js"></script>
+
+        <script src="src/models/highscores-model.js"></script>
+        <script src="src/controllers/highscores-controller.js"></script>
+        <script src="src/views/highscores-view.js"></script>
+
+        <script src="src/models/board-model.js"></script>
+        <script src="src/controllers/board-controller.js"></script>
+        <script src="src/views/board-view.js"></script>
+
+        <script src="src/models/game-model.js"></script>
+        <script src="src/controllers/game-controller.js"></script>
+        <script src="src/views/game-view.js"></script>
+
+        <script src="src/models/parameters-model.js"></script>
+        <script src="src/controllers/parameters-controller.js"></script>
+        <script src="src/views/parameters-view.js"></script>
+
+        <script src="src/models/minesweeper-model.js"></script>
+        <script src="src/views/minesweeper-view.js"></script>
+        <script src="src/controllers/minesweeper-controller.js"></script>
+
+        <script src="src/main.js" type="text/javascript"></script>
+    </body>
+</html>

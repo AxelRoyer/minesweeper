@@ -1,0 +1,617 @@
+/**
+* Global Reset of all HTML Elements
+*
+* Resetting all of our HTML Elements ensures a smoother
+* visual transition between browsers. If you don't believe me,
+* try temporarily commenting out this block of code, then go
+* and look at Mozilla versus Safari, both good browsers with
+* a good implementation of CSS. The thing is, all browser CSS
+* defaults are different and at the end of the day if visual
+* consistency is what we're shooting for, then we need to
+* make sure we're resetting all spacing elements.
+*
+*/
+html, body {
+  border: 0;
+  font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+div, span, object, iframe, img, table, caption, thead, tbody,
+tfoot, tr, tr, td, article, aside, canvas, details, figure, hgroup, menu,
+nav, footer, header, section, summary, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+ol, ul, li, fieldset, legend, label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+  display: block;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption, table th, table td {
+  text-align: left;
+  vertical-align: middle;
+}
+
+a img {
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+html, body {
+  height: 100%;
+  background: url("images/bg-texture.png") repeat;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+#wrapper {
+  width: 200%;
+  height: 100%;
+  transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -webkit-translateX: 0%;
+  -moz-translateX: 0%;
+}
+
+*, *:before, *:after {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#game, #parameters, #rules, #highscores, #home {
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 50%;
+  display: inline-block;
+}
+#game > header, #parameters > header, #rules > header, #highscores > header, #home > header {
+  background-color: orange;
+  width: 100%;
+  height: 2rem;
+  color: white;
+  line-height: 1.9rem;
+  text-align: center;
+}
+#game > header > .back, #parameters > header > .back, #rules > header > .back, #highscores > header > .back, #home > header > .back {
+  content: "";
+  height: 100%;
+  width: 2rem;
+  cursor: pointer;
+  background: url("images/back.png") center center;
+  float: left;
+}
+#game > header > .back:hover, #parameters > header > .back:hover, #rules > header > .back:hover, #highscores > header > .back:hover, #home > header > .back:hover {
+  background-color: darkorange;
+}
+#game > header > a, #parameters > header > a, #rules > header > a, #highscores > header > a, #home > header > a {
+  display: inline-block;
+}
+#game .pageBody, #parameters .pageBody, #rules .pageBody, #highscores .pageBody, #home .pageBody {
+  width: 100%;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  height: calc(100% - 3.5rem);
+}
+@media screen {
+  #game .pageBody, #parameters .pageBody, #rules .pageBody, #highscores .pageBody, #home .pageBody {
+    max-width: 50rem;
+  }
+}
+
+#home {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#home > nav {
+  margin-top: 10%;
+}
+
+#home > nav > a {
+  background-color: rgba(255, 140, 0, 0.7);
+  color: white;
+  font-size: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s;
+  display: block;
+  margin-top: 0.5rem;
+}
+#home > nav > a:hover {
+  color: black;
+  background-color: darkorange;
+}
+
+#backCurrentGameButton {
+  display: none;
+}
+
+#parameters ul li {
+  list-style: none;
+  padding: 0.3rem 0.8rem 0.5rem 0.8rem;
+  position: relative;
+}
+#parameters ul li:hover span {
+  color: #383838;
+}
+#parameters ul li .title {
+  font-size: 1.3rem;
+  color: gray;
+  display: block;
+  width: calc(100% - 2rem);
+}
+#parameters ul li .subTitle {
+  font-size: 0.8rem;
+  color: gray;
+  display: block;
+  width: calc(100% - 2rem);
+  margin-top: -0.4rem;
+}
+#parameters ul li > select {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+}
+#parameters ul li .checkbox-checked {
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  right: 1rem;
+  top: 1.1rem;
+  content: "";
+  background: url("images/checkbox-checked.png");
+}
+#parameters ul li + li {
+  border-top: 1px solid silver;
+}
+#parameters ul li:last-child {
+  height: 5.5rem;
+  border-bottom: 1px solid silver;
+}
+#parameters ul li input[type="checkbox"] {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+}
+#parameters ul li .select-label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+#parameters ul li .select-label + .select-label {
+  top: 3rem;
+}
+
+#game {
+  position: relative;
+}
+#game > header > div {
+  height: 100%;
+}
+#game > header > div > #remainingBombs, #game > header > div #remainingTime {
+  display: inline-block;
+  position: relative;
+  top: -0.6rem;
+}
+#game > header > div > #remainingBombs {
+  margin-right: 1rem;
+}
+#game > header > div > #remainingTime {
+  margin-left: 1rem;
+}
+#game > header > div > .icon-bomb, #game > header > div > .icon-time {
+  height: 100%;
+  width: 2rem;
+  display: inline-block;
+}
+#game > header > div > .icon-bomb {
+  background: url("images/bomb_small.png") no-repeat;
+}
+#game > header > div > .icon-time {
+  position: relative;
+  top: 4px;
+  background: url("images/clock.png") no-repeat;
+}
+#game > header > .pauseTimer, #game > header > .playTimer {
+  content: "";
+  display: inline-block;
+  height: 2rem;
+  float: right;
+  margin-right: 1rem;
+  width: 2rem;
+}
+#game > header > .pauseTimer:hover, #game > header > .pauseTimer:active, #game > header > .playTimer:hover, #game > header > .playTimer:active {
+  background-color: darkorange;
+}
+#game > header > .pauseTimer {
+  background: url("images/pause.png");
+}
+#game > header > .playTimer {
+  background: url("images/play.png");
+}
+#game > header > #newGame {
+  float: right;
+  margin-right: 1rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  background: url("images/new.png");
+}
+#game > header > #newGame:hover, #game > header > #newGame:active {
+  background-color: darkorange;
+}
+#game #boardContainer {
+  height: calc(100% - 4rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#game #boardContainer #board {
+  display: table-cell;
+}
+#game #boardContainer #board .line {
+  display: table-row;
+}
+#game #boardContainer #board.game-cursor-hand .unclicked {
+  cursor: pointer;
+}
+#game #boardContainer #board.game-cursor-flag .unclicked {
+  cursor: url("images/cursor_flag.png"), auto;
+}
+#game #boardContainer #board .flaged, #game #boardContainer #board .empty, #game #boardContainer #board .unclicked, #game #boardContainer #board .box, #game #boardContainer #board .bomb, #game #boardContainer #board .value1, #game #boardContainer #board .value2, #game #boardContainer #board .value3,
+#game #boardContainer #board .value4, #game #boardContainer #board .value5, #game #boardContainer #board .value6, #game #boardContainer #board .value7, #game #boardContainer #board .value8 {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 3rem;
+  margin: 2px;
+  font-size: 2rem;
+}
+#game #boardContainer #board .unclicked:hover, #game #boardContainer #board .unclicked:active {
+  background-color: darkgray;
+}
+#game #boardContainer #board .empty {
+  background-color: whitesmoke;
+}
+#game #boardContainer #board .value1, #game #boardContainer #board .value2, #game #boardContainer #board .value3, #game #boardContainer #board .value4,
+#game #boardContainer #board .value5, #game #boardContainer #board .value6, #game #boardContainer #board .value7, #game #boardContainer #board .value8 {
+  background-color: silver;
+}
+#game #boardContainer #board .flaged {
+  background: url("images/flag.png") center center;
+  background-color: lightgray;
+}
+#game #boardContainer #board .unclicked {
+  background-color: gray;
+}
+#game #boardContainer #board .bomb {
+  background: url("images/bomb.png") no-repeat center center;
+  background-color: red;
+}
+#game #boardContainer #board .value1 {
+  color: green;
+}
+#game #boardContainer #board .value2 {
+  color: red;
+}
+#game #boardContainer #board .value3 {
+  color: blue;
+}
+#game #boardContainer #board .value4 {
+  color: orange;
+}
+#game #boardContainer #board .value5 {
+  color: pink;
+}
+#game #boardContainer #board .value6 {
+  color: black;
+}
+#game #boardContainer #board .value7 {
+  color: brown;
+}
+#game #boardContainer #board .value8 {
+  color: gray;
+}
+#game footer {
+  background-color: #2C3539;
+  width: 100%;
+  height: 2rem;
+  position: absolute;
+  bottom: 0;
+  line-height: 2rem;
+  color: white;
+  table-layout: fixed;
+  display: table;
+}
+#game footer a {
+  display: table-cell;
+  text-align: center;
+  width: calc(100% / 3);
+}
+#game footer a:hover {
+  background-color: gray;
+}
+#game footer .help-icon-disable,
+#game footer .help-icon-enable {
+  display: inline-block;
+  content: "";
+  height: 25px;
+  width: 25px;
+  position: relative;
+  top: 5px;
+}
+#game footer .help-icon-enable {
+  background: url("images/help-colored.png") no-repeat 0 0;
+}
+#game footer .help-icon-disable {
+  background: url("images/help-gray.png") no-repeat 0 0;
+}
+#game footer .help-disabled span {
+  background: url("images/help-gray.png") no-repeat 0 0;
+}
+#game footer .hand-flag, #game footer .flag-hand {
+  background-size: 60px 30px;
+}
+#game footer .hand-flag {
+  background: url("images/hand_flag.png") no-repeat center center;
+  cursor: pointer;
+}
+#game footer .flag-hand {
+  background: url("images/flag_hand.png") no-repeat center center;
+  cursor: url("icon/cursor_flag.png");
+}
+#game #shadow, #game .shadow {
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 99;
+}
+#game #inputName {
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+#game #inputName div {
+  width: 15rem;
+  text-align: center;
+  background-color: white;
+}
+#game #inputName div h5 {
+  border-bottom: 1px solid orange;
+}
+#game #inputName div button {
+  width: 100%;
+  display: block;
+  background-color: orange;
+  border: 1px solid orange;
+}
+#game #inputName div button:hover {
+  background-color: darkorange;
+  border: 1px solid darkorange;
+}
+#game #inputName div label {
+  padding: 0.2rem;
+}
+
+#rules {
+  display: none;
+}
+#rules:target {
+  display: block;
+}
+#rules ul {
+  width: 100%;
+  padding-top: 1rem;
+  max-width: 30rem;
+  margin: auto;
+}
+#rules ul li {
+  list-style: none;
+  text-align: center;
+  border: 1px solid gray;
+}
+#rules ul li h5 {
+  font-weight: normal;
+  background-color: gray;
+  color: white;
+}
+#rules ul li p {
+  padding: 0.3rem;
+  background-color: whitesmoke;
+}
+#rules ul li + li {
+  margin-top: 1rem;
+}
+
+#highscores table {
+  width: 100%;
+}
+#highscores table thead {
+  height: 1rem;
+  background-color: gray;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+#highscores table thead th {
+  text-align: center;
+}
+#highscores table tbody tr {
+  height: 2rem;
+}
+#highscores table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+#highscores table tbody tr:nth-child(even) {
+  background-color: whitesmoke;
+}
+#highscores table tbody tr + tr {
+  border-top: 1px solid whitesmoke;
+}
+#highscores table tbody tr td {
+  text-align: center;
+}
+
+#promptBox,
+#dialogBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#promptBox > div,
+#dialogBox > div {
+  background-color: white;
+  display: inline-block;
+  min-width: 5rem;
+  margin: auto;
+  margin-top: 5rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  opacity: 0;
+  transform: scale(0.2);
+  transition: 0.4s;
+}
+#promptBox.animation-in div,
+#dialogBox.animation-in div {
+  opacity: 1;
+  transform: scale(1);
+}
+#promptBox header,
+#dialogBox header {
+  font-size: 20px;
+  border-bottom: 1px solid orange;
+  padding: 0.1rem;
+  text-align: center;
+  background-color: orange;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+#promptBox footer,
+#dialogBox footer {
+  padding: 0.3rem;
+  border-top: 1px solid silver;
+  background-color: whitesmoke;
+  text-align: right;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+#promptBox footer button,
+#dialogBox footer button {
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+  background: -moz-linear-gradient(top, #faa51a, #f47a20);
+  border: solid 1px #da7c0c;
+  color: black;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+}
+#promptBox footer button:hover,
+#dialogBox footer button:hover {
+  background: #f47c20;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+  background: -moz-linear-gradient(top, #f88e11, #f06015);
+}
+#promptBox footer button:active,
+#dialogBox footer button:active {
+  color: #fcd3a5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+  background: -moz-linear-gradient(top, #f47a20, #faa51a);
+}
+#promptBox input,
+#dialogBox input {
+  margin: 0.5rem;
+  border-radius: 0;
+  border: 1px solid silver;
+}
+#promptBox p,
+#dialogBox p {
+  padding: 0.8rem 2rem;
+}
+
+#infoBox {
+  position: absolute;
+  margin: auto;
+  display: flex;
+  height: 3rem;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+#infoBox div {
+  margin: auto;
+  display: inline-block;
+  padding-right: 2rem;
+  position: relative;
+  padding-left: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  z-index: 10;
+  border-radius: 0.3rem;
+  color: gray;
+}
+#infoBox div span {
+  position: absolute;
+  right: 0.2rem;
+  color: silver;
+}
+#infoBox div span:hover {
+  color: black;
+  cursor: pointer;
+}
+#infoBox div.warning {
+  background-color: lightyellow;
+  border: 1px solid yellow;
+}
+#infoBox div.success {
+  background-color: lightgreen;
+  border: 1px solid green;
+}
+#infoBox div.danger {
+  background-color: #E77471;
+  border: 1px solid red;
+  color: black;
+}

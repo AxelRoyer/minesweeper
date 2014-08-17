@@ -1,0 +1,77 @@
+html, body{
+    height: 100%;
+    background:url("images/bg-texture.png") repeat;
+    background-color: black;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    width: 100%;
+}
+
+#wrapper{
+    width: 200%;
+    height: 100%;
+    transition-duration:2s;
+    -moz-transition-duration:2s;
+    -webkit-translateX: 0%;
+    -moz-translateX: 0%;
+}
+
+*, *:before, *:after {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#game, #parameters, #rules, #highscores, #home{
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 50%;
+    display:inline-block;
+
+    >header{
+        background-color: $mainColor;
+        width: 100%;
+        height: 2rem;
+        color: white;
+        line-height: 1.9rem;
+        text-align: center;
+
+        >.back{
+            content:"";
+            height: 100%;
+            width: 2rem;
+            cursor: pointer;
+            background:url("images/back.png") center center;
+            float: left;
+
+            &:hover{
+                background-color:darkorange;
+            };
+        }
+
+        >a{
+            display: inline-block;
+        }
+    }
+
+    .pageBody {
+        width: 100%;
+        margin: 0 auto;
+        background-color: whitesmoke;
+        height: calc(100% - 3.5rem);
+    }
+
+    @media screen {
+        .pageBody {
+            max-width: 50rem;
+        }
+    }
+}
